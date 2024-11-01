@@ -36,3 +36,32 @@ A scalable and efficient backend management system built with **Scala** and **Ak
    ```bash
    git clone https://github.com/mollybeach/backend-management-system.git
    cd backend-management-system
+   ```
+
+2. **Configure environment variables**:
+   - Copy the example environment file to create your local configuration:
+     ```bash
+     cp .env.example .env
+     ```
+   - Update `.env` with your credentials:
+     ```properties
+     # Database Configuration
+     DB_HOST=localhost
+     DB_PORT=5432
+     DB_NAME=backend_management
+     DB_USER=your_username
+     DB_PASSWORD=your_password
+
+     # Server Configuration
+     SERVER_HOST=0.0.0.0
+     SERVER_PORT=8080
+
+     # JWT Configuration
+     JWT_SECRET=your_jwt_secret_key
+     JWT_EXPIRATION=24h
+     ```
+
+3. **Run database migrations**:
+   ```bash
+   sbt flywayMigrate
+   ```
